@@ -3,12 +3,28 @@ import data from '../constants/social-icons'
 
 const list = data.map((item, i) => (
   <li className="social__item" key={i}>
-    <a className="social__link" href={item.url} target="_blank">
+    <a
+      className="social__link"
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {item.icon}
     </a>
   </li>
 ))
 
-const Social = () => <ul className="social">{list}</ul>
+interface socialProps {
+  footer?: boolean
+}
+
+class Social extends React.Component<socialProps> {
+  render() {
+    let cssClass = 'social'
+    if (this.props.footer) cssClass += ' social--footer'
+
+    return <ul className={cssClass}>{list}</ul>
+  }
+}
 
 export default Social

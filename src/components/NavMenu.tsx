@@ -1,36 +1,18 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
-import links from '../constants/links'
-
-const MenuItem = ({ to, children }: any) => {
-  return (
-    <li className="navbar__item">
-      <Link to={to} className="navbar__link">
-        {children}
-      </Link>
-    </li>
-  )
-}
-
-const itemList = (
-  <ul className="navbar__list">
-    {links.map((l, i) => (
-      <MenuItem to={l.path} key={i}>
-        {l.text}
-      </MenuItem>
-    ))}
-  </ul>
-)
+import NavLinks from './NavLinks'
 
 interface navbarProps {
-  isOpen: boolean
+  isOpen: Boolean
 }
 
 class NavMenu extends React.Component<navbarProps> {
   render() {
+    let cssClass = this.props.isOpen ? 'navbar' : ' navbar--hide'
+
     return (
-      <nav className={this.props.isOpen ? 'navbar' : 'navbar navbar--hide'}>
-        {itemList}
+      <nav className={cssClass}>
+        <NavLinks prefix="navbar" />
       </nav>
     )
   }
