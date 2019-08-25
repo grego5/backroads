@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import links from '../constants/links'
 
@@ -22,8 +22,18 @@ const itemList = (
   </ul>
 )
 
-const Navbar = () => {
-  return <nav className="navbar">{itemList}</nav>
+interface navbarProps {
+  isOpen: boolean
 }
 
-export default Navbar
+class NavMenu extends React.Component<navbarProps> {
+  render() {
+    return (
+      <nav className={this.props.isOpen ? 'navbar' : 'navbar navbar--hide'}>
+        {itemList}
+      </nav>
+    )
+  }
+}
+
+export default NavMenu

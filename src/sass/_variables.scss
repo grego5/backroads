@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Poppins');
+
 //color palette
 $color-primary: #3fd0d4;
 
@@ -9,15 +11,16 @@ $color-black: #222;
 $color-grey-light: #ececec;
 $color-grey-dark: #afafaf;
 
-$transition: all 0.3s linear;
+$transition: all 0.2s linear;
 $spacing: 4px;
 $shadow-light: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
 $shadow-dark: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
 
 //font
 $default-font-size: 1.4rem;
-$font-primary: 'Nunito', Arial, Helvetica, sans-serif;
-$font-display: 'Josefin Sans', Arial, Helvetica, sans-serif;
+$font-primary: 'Lato', Arial, Helvetica, sans-serif;
+$font-secondary: 'Poppins', Arial, Helvetica, sans-serif;
+$letter-spacing: 4px;
 
 /* 
    media breakpoints

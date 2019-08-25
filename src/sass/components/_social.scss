@@ -1,0 +1,32 @@
+.social {
+  display: flex;
+  font-size: 3rem;
+  align-items: center;
+  line-height: 0;
+
+  @include respond(tab-port) {
+    display: none;
+  }
+
+  &__item {
+    text-decoration: none;
+    list-style: none;
+    color: $color-primary;
+    margin: 0 2px;
+    transition: $transition;
+    height: auto;
+
+    &:hover,
+    &:active {
+      transform: translateY(-5px);
+      color: $color-black;
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: currentColor;
+    display: block;
+    padding: 2px;
+  }
+}

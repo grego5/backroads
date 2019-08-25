@@ -8,7 +8,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import Navbar from './Navbar'
+import Header from './Header'
 import Footer from './Footer'
 
 const query = graphql`
@@ -36,7 +36,7 @@ const Layout = ({ children }: JSX.ElementChildrenAttribute) => (
     render={data => (
       <>
         <div style={style.header}>
-          <Navbar />
+          <Header />
           <main>{children}</main>
           <Footer />
         </div>
