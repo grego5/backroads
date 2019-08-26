@@ -3,11 +3,12 @@
 @import 'base';
 @import 'utilities';
 
-@import './sections/about';
-@import './sections/hero';
+@import './sections/error';
 @import './sections/header';
 @import './sections/footer';
-@import './sections/error';
+@import './sections/hero';
+@import './sections/about';
+@import './sections/services';
 
 @import './components/heading';
 @import './components/button';

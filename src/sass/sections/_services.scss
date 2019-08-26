@@ -1,0 +1,26 @@
+.services {
+  background: $color-grey-light;
+  padding: 4rem 0;
+
+  &__outer {
+    width: 80vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 2rem;
+  }
+  &__card {
+    margin: 2rem 0;
+    text-align: center;
+  }
+  &__icon {
+    background: $color-primary;
+    padding: 0.5rem;
+    display: inline-block;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  &__title {
+    text-transform: uppercase;
+  }
+}
