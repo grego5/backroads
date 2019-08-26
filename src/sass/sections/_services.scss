@@ -3,24 +3,34 @@
   padding: 4rem 0;
 
   &__outer {
-    width: 80vw;
+    width: 80%;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-column-gap: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(phone) {
+      flex-direction: column;
+    }
   }
   &__card {
-    margin: 2rem 0;
+    max-width: 25rem;
+    margin: 4rem;
     text-align: center;
   }
   &__icon {
     background: $color-primary;
     padding: 0.5rem;
     display: inline-block;
-    font-size: 2rem;
+    font-size: 4rem;
     margin-bottom: 1.5rem;
   }
   &__title {
     text-transform: uppercase;
+    font-size: 2.2rem;
+  }
+
+  &__text {
+    font-size: 2rem;
   }
 }
