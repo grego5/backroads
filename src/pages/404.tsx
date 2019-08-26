@@ -1,13 +1,19 @@
 import React from 'react'
-
+import Banner from '../components/Banner'
+import { Link } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <header className="error">
+      <Banner title="Error 404" text="Page does not exit">
+        <Link className="btn btn--white" to="/">
+          Back to home page
+        </Link>
+      </Banner>
+    </header>
   </Layout>
 )
 

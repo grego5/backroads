@@ -1,0 +1,8 @@
+.error {
+  background: $color-primary;
+  background-image: linear-gradient(to bottom, $color-primary, $color-black);
+  min-height: calc(100vh - 15vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

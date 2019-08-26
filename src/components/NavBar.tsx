@@ -4,7 +4,7 @@ import logo from '../images/logo.svg'
 import Social from './Social'
 import { FaAlignRight } from 'react-icons/fa'
 
-const Header = () => {
+const NavBar = () => {
   const [isOpen, setNav] = useState(false)
 
   function toggleNav() {
@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <div className="header">
-      <img src={logo} alt="Backroads logo" />
+      <img className="logo" src={logo} alt="Backroads logo" />
       <button type="button" className="navbar__toggle" onClick={toggleNav}>
         <FaAlignRight className="navbar__icon" />
       </button>
@@ -23,4 +23,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default NavBar
