@@ -1,9 +1,9 @@
 import React from 'react'
-import Social from './Social'
-import NavLinks from './NavLinks'
+import Social from '../components/Social'
+import NavLinks from '../components/NavLinks'
 
 const Copyright = () => (
-  <div className="footer__copyright">
+  <footer className="footer__copyright">
     © {new Date().getFullYear()}, Built with {` `}
     <a
       className="footer__link"
@@ -22,7 +22,7 @@ const Copyright = () => (
     >
       Gregos
     </a>
-  </div>
+  </footer>
 )
 
 const Footer = () => (

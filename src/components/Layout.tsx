@@ -8,8 +8,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import NavBar from './NavBar'
-import Footer from './Footer'
+import Header from '../sections/Header'
+import Footer from '../sections/Footer'
 
 const query = graphql`
   query SiteTitleQuery {
@@ -26,7 +26,7 @@ const Layout = ({ children }: JSX.ElementChildrenAttribute) => (
     query={query}
     render={data => (
       <>
-        <NavBar />
+        <Header />
         <main>{children}</main>
         <Footer />
       </>
