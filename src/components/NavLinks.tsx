@@ -12,7 +12,7 @@ export default class extends React.Component<menuProps> {
     return (
       <ul className={`${prefix}__list`}>
         {links.map((item, i) => (
-          <li className={`${prefix}__item`}>
+          <li key={i} className={`${prefix}__item`}>
             <Link to={item.path} className={`${prefix}__link`}>
               {item.text}
             </Link>

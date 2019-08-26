@@ -2,8 +2,12 @@
 @import 'mixins';
 @import 'base';
 @import 'utilities';
-@import 'layout';
 
+@import './sections/about';
+@import './sections/hero';
+
+@import './components/heading';
+@import './components/header';
 @import './components/button';
 @import './components/navbar';
 @import './components/social';

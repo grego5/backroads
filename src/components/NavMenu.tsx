@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link } from 'gatsby'
 import NavLinks from './NavLinks'
 
 interface navbarProps {
@@ -8,7 +7,7 @@ interface navbarProps {
 
 class NavMenu extends React.Component<navbarProps> {
   render() {
-    let cssClass = this.props.isOpen ? 'navbar' : ' navbar--hide'
+    let cssClass = this.props.isOpen ? 'navbar--show' : ' navbar'
 
     return (
       <nav className={cssClass}>

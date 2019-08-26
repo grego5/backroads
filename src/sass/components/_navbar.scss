@@ -1,10 +1,18 @@
 .navbar {
   backface-visibility: hidden;
-  transition: $transition;
 
   @include respond(tab-port) {
-    height: 23rem;
+    overflow: hidden;
+    height: 0;
     width: 100%;
+  }
+
+  &--show {
+    @include respond(tab-port) {
+      height: 23rem;
+      width: 100%;
+      transition: $transition;
+    }
   }
 
   &__list {
@@ -32,14 +40,6 @@
       @include respond(tab-port) {
         margin: 0;
       }
-    }
-  }
-
-  &--hide {
-    @include respond(tab-port) {
-      overflow: hidden;
-      height: 0;
-      width: 100%;
     }
   }
 
