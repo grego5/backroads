@@ -1,13 +1,32 @@
 import React from 'react'
 import Heading from '../components/Heading'
-import img from '../images/defaultBcg.jpeg'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
+
+const query = graphql`
+  {
+    file(name: { eq: "defaultBcg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+  }
+`
 
 const About = () => {
+  const {
+    file: {
+      childImageSharp: { fluid },
+    },
+  } = useStaticQuery(query)
+
   return (
     <section className="about">
       <Heading text="about us" />
       <div className="about__image-outer">
-        <img className="about__image" src={img} alt="about company" />
+        <Img fluid={fluid} alt="about company" />
       </div>
       <article className="about__content">
         <h3 className="about__title">explore the difference</h3>
