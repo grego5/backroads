@@ -1,17 +1,21 @@
 import React from 'react'
-import Banner from '../components/Banner'
-import { Link } from 'gatsby'
+import BackgroundImage from 'gatsby-background-image'
+import { FluidObject } from 'gatsby-image'
 
-const Hero = () => {
-  return (
-    <section className="hero">
-      <Banner title="It's the home page" text="Welcome to it">
-        <Link className="btn btn--white" to="/tours">
-          explore tours
-        </Link>
-      </Banner>
-    </section>
-  )
+interface IHero {
+  image: FluidObject
+  home: boolean
+  children?: JSX.Element
 }
 
-export default Hero
+export default ({ image, home, children }: IHero) => {
+  return (
+    <BackgroundImage
+      Tag="section"
+      className={'hero' + (home && ' hero--home')}
+      fluid={image}
+    >
+      {children}
+    </BackgroundImage>
+  )
+}
