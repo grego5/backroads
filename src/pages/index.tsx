@@ -6,7 +6,7 @@ import { graphql, Link } from 'gatsby'
 import Banner from '../components/Banner'
 
 import About from '../sections/About'
-import Hero from '../sections/Hero'
+import Hero from '../components/Hero'
 import Services from '../sections/Services'
 
 export const query = graphql`
@@ -24,7 +24,7 @@ export const query = graphql`
 const IndexPage = ({ data }: any) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <Hero image={data.file.childImageSharp.fluid} home>
+    <Hero image={data.file.childImageSharp.fluid}>
       <Banner title="It's the home page" text="Welcome to it">
         <Link className="btn btn--white" to="/tours">
           explore tours

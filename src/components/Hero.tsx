@@ -4,15 +4,15 @@ import { FluidObject } from 'gatsby-image'
 
 interface IHero {
   image: FluidObject
-  home: boolean
+  small?: boolean
   children?: JSX.Element
 }
 
-export default ({ image, home, children }: IHero) => {
+export default ({ image, small, children }: IHero) => {
   return (
     <BackgroundImage
       Tag="section"
-      className={'hero' + (home && ' hero--home')}
+      className={'hero' + (small ? ' hero--small' : '')}
       fluid={image}
     >
       {children}
