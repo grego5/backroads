@@ -6,10 +6,11 @@ module.exports = {
   siteMetadata: {
     title: `Backroads`,
     description: `Another udemy course project`,
-    author: `@gatsbyjs`,
+    author: `grego5`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

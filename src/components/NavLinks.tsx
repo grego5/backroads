@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'gatsby'
+import Link from 'gatsby-plugin-transition-link/AniLink'
 import links from '../constants/links'
 
 interface menuProps {
@@ -13,7 +13,7 @@ export default class extends React.Component<menuProps> {
       <ul className={`${prefix}__list`}>
         {links.map((item, i) => (
           <li key={i} className={`${prefix}__item`}>
-            <Link to={item.path} className={`${prefix}__link`}>
+            <Link fade to={item.path} className={`${prefix}__link`}>
               {item.text}
             </Link>
           </li>
