@@ -1,0 +1,41 @@
+.contact {
+  padding: 4rem 0;
+
+  &__outer {
+    width: 80vw;
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+}
+
+.form {
+  font-size: 1.6rem;
+
+  &__control,
+  &__submit {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid $color-grey-dark;
+    border-radius: 0.25rem;
+  }
+  &__submit {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    text-transform: uppercase;
+    color: $color-black;
+    transition: $transition;
+    cursor: pointer;
+
+    &:hover {
+      background: $color-grey-dark;
+      color: $color-white;
+      border-color: $color-grey-dark;
+    }
+  }
+  &__label {
+    text-transform: capitalize;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}

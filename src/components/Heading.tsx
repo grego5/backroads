@@ -7,18 +7,18 @@ interface headingProps {
 
 class Heading extends React.Component<headingProps> {
   render() {
-    const { as = 'div', text } = this.props
+    const { as = `div`, text } = this.props
     const ex = text.split(' ')
-    return (
+    const inner = (
       <>
-        <h2 className="heading">
-          <span className="heading--prime">{ex.shift()}</span>
-          <span className="heading--sub">
-            {ex.length > 0 && ' ' + ex.join(' ')}
-          </span>
-        </h2>
+        <span className="heading--prime">{ex.shift()}</span>
+        <span className="heading--sub">
+          {ex.length > 0 && ' ' + ex.join(' ')}
+        </span>
       </>
     )
+
+    return React.createElement(as, { className: 'heading' }, inner)
   }
 }
 

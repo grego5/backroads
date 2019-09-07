@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
+import Contact from '../sections/Contact'
 
 import { graphql } from 'gatsby'
 
@@ -18,8 +19,8 @@ export const query = graphql`
 
 const contact = ({ data }: any) => (
   <Layout>
-    <h1>Contact Page</h1>
     <Hero small image={data.file.childImageSharp.fluid} />
+    <Contact />
   </Layout>
 )
 

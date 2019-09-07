@@ -24,7 +24,7 @@ const About = () => {
 
   return (
     <section className="about">
-      <Heading text="about us" />
+      <Heading as="h2" text="about us" />
       <div className="about__image-outer">
         <Img fluid={fluid} alt="about company" />
       </div>
