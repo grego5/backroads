@@ -18,14 +18,14 @@ export const query = graphql`
     tours: allContentfulTour {
       edges {
         node {
-          id
+          contentful_id: id
           name
           country
           price
           days
           images {
             fixed {
-              src
+              ...GatsbyContentfulFixed
             }
           }
         }
