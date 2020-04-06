@@ -1,9 +1,9 @@
 import React from 'react'
-import { FixedObject } from 'gatsby-image'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
-import Tour, { ITour } from '../components/Tour'
-
+import TourList from '../sections/TourList'
+import { ITourCard } from '../components/TourCard'
+import { FluidObject } from 'gatsby-image'
 import { graphql } from 'gatsby'
 
 export const query = graphql`
@@ -38,12 +38,7 @@ const tours = ({ data }: any) => (
   <Layout>
     <h1>Tours Page</h1>
     <Hero small image={data.bg.childImageSharp.fluid} />
-
-    <ul className={'tour-list'}>
-      {data.tours.edges.map(({ node }: any) => {
-        return <Tour key={node.id} {...node} />
-      })}
-    </ul>
+    <TourList tours={data.tours} />
   </Layout>
 )
 

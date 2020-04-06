@@ -1,9 +1,10 @@
 import React from 'react'
 import Img, { FixedObject } from 'gatsby-image'
 
-export interface ITour {
-  id: String
-  name: String
+export interface ITourCard {
+  node: any
+  id: string
+  name: string
   country: String
   price: Number
   days: Number
@@ -14,7 +15,7 @@ export interface ITour {
   ]
 }
 
-export default ({ name, country, price, days, images }: ITour) => {
+export default ({ name, country, price, days, images }: ITourCard) => {
   return (
     <li className="tour">
       <Img className="tour__picture" fixed={images[0].fixed} />
