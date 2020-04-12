@@ -1,5 +1,6 @@
 import React from 'react'
 import Tour, { ITourCard } from '../components/TourCard'
+import Heading from '../components/Heading'
 
 export interface ITourData {
   tours: {
@@ -15,10 +16,12 @@ interface IProps {
 
 export default ({ tours }: IProps) => {
   return (
-    <ul className={'tour-list'}>
+    <section className={'tour-list'}>
+      <Heading text="our tours" />
+
       {tours.edges.map(({ node }: ITourCard) => {
         return <Tour key={node.id} {...node} />
       })}
-    </ul>
+    </section>
   )
 }

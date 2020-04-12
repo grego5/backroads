@@ -2,8 +2,6 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import TourList from '../sections/TourList'
-import { ITourCard } from '../components/TourCard'
-import { FluidObject } from 'gatsby-image'
 import { graphql } from 'gatsby'
 
 export const query = graphql`
@@ -24,8 +22,8 @@ export const query = graphql`
           price
           days
           images {
-            fixed {
-              ...GatsbyContentfulFixed
+            fluid {
+              ...GatsbyContentfulFluid
             }
           }
         }
@@ -36,7 +34,6 @@ export const query = graphql`
 
 const tours = ({ data }: any) => (
   <Layout>
-    <h1>Tours Page</h1>
     <Hero small image={data.bg.childImageSharp.fluid} />
     <TourList tours={data.tours} />
   </Layout>
