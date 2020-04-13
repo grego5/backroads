@@ -21,6 +21,7 @@ export const query = graphql`
           country
           price
           days
+          slug
           images {
             fluid {
               ...GatsbyContentfulFluid

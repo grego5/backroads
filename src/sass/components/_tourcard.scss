@@ -9,8 +9,40 @@
     box-shadow: $shadow-dark;
   }
 
-  &__picture {
-    width: 100%;
+  &__image-box {
+    position: relative;
+    background: $color-primary;
+    transition: $transition;
+
+    &:hover .tour__image {
+      opacity: 0.3;
+    }
+
+    &:hover .tour__link {
+      opacity: 1;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    text-transform: uppercase;
+    letter-spacing: $spacing;
+    color: $color-white;
+    border: 2px solid $color-white;
+    padding: 0.9rem 1.6rem;
+    display: inline-block;
+    transition: $transition;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      background: $color-white;
+      color: $color-primary;
+    }
   }
 
   &__title,
