@@ -1,12 +1,13 @@
 .tour {
   width: 32%;
-  margin-bottom: 1%;
+  margin: 0 0.5% 1%;
   list-style-type: none;
   box-shadow: $shadow-light;
   transition: $transition;
 
   &:hover {
     box-shadow: $shadow-dark;
+    transform: translate(-2px, -5px);
   }
 
   &__image-box {
@@ -45,17 +46,39 @@
     }
   }
 
-  &__title,
-  &__content {
-    padding: 0.5rem;
+  &__title {
+    text-transform: capitalize;
   }
 
   &__content {
+    padding: 1rem;
+  }
+
+  &__info {
+    font-size: 1.525rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    text-transform: uppercase;
+    align-items: center;
+    margin-top: 0.5rem;
   }
 
-  &__data {
-    font-size: 1.4rem;
+  &__country {
+    text-transform: capitalize;
+    color: $color-primary;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    margin-right: 0.4rem;
+  }
+
+  &__details {
+    font-size: 1.125rem;
+    color: $color-grey-dark;
+    text-transform: uppercase;
+    text-align: right;
   }
 }
