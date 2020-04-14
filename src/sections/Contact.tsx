@@ -3,7 +3,7 @@ import Heading from '../components/Heading'
 
 const Contact = () => (
   <section className="contact">
-    <Heading text="contact us" />
+    <Heading text="contact us" as="h1" />
     <div className="contact__outer">
       <form action="" className="form">
         <div>
