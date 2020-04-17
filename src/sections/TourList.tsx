@@ -18,12 +18,13 @@ interface IProps {
 
 export default ({ tours, heading, as }: IProps) => {
   return (
-    <section className={'tour-list'}>
+    <section className={'tours'}>
       <Heading text={heading} as={as} />
-
-      {tours.edges.map(({ node }: ITourCard) => {
-        return <Tour key={node.id} {...node} />
-      })}
+      <div className="tours__grid">
+        {tours.edges.map(({ node }: ITourCard) => {
+          return <Tour key={node.id} {...node} />
+        })}
+      </div>
     </section>
   )
 }
