@@ -16,7 +16,7 @@ export const query = graphql`
     tours: allContentfulTour {
       edges {
         node {
-          contentful_id: id
+          id: contentful_id
           name
           country
           price
@@ -33,11 +33,11 @@ export const query = graphql`
   }
 `
 
-const tours = ({ data }: any) => (
-  <Layout>
-    <Hero small image={data.bg.childImageSharp.fluid} />
-    <TourList tours={data.tours} heading="our tours" as="h1" />
-  </Layout>
-)
-
-export default tours
+export default ({ data }: any) => {
+  return (
+    <Layout>
+      <Hero small image={data.bg.childImageSharp.fluid} />
+      <TourList tours={data.tours} heading="our tours" as="h1" />
+    </Layout>
+  )
+}

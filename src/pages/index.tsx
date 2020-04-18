@@ -24,7 +24,7 @@ export const query = graphql`
     tours: allContentfulTour(filter: { featured: { eq: true } }, limit: 3) {
       edges {
         node {
-          contentful_id
+          id: contentful_id
           name
           country
           price
