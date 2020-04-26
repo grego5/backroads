@@ -1,10 +1,19 @@
 .tour-layout {
   display: flex;
-  padding: 4rem 0;
+  padding: 2rem 10rem;
+
+  @include respond(tab-port) {
+    padding: 2rem;
+  }
+
+  @include respond(phone) {
+    flex-direction: column;
+  }
 }
 
 .content {
   flex-basis: 100%;
+  padding-right: 10rem;
 
   &__icon {
     color: $color-primary;
@@ -18,6 +27,7 @@
   }
 
   &__title {
+    flex-basis: 100%;
     text-transform: capitalize;
     margin: 2rem 0;
     font-weight: 600;
@@ -37,7 +47,8 @@
 }
 
 .images {
-  flex-basis: 80rem;
+  width: 100%;
+  max-width: 100rem;
 
   &__box {
     width: 100%;
