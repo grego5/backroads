@@ -2,6 +2,7 @@ import React from 'react'
 import Img, { FluidObject } from 'gatsby-image'
 import { FaMoneyBillWave, FaMap } from 'react-icons/fa'
 import Day from '../components/Day'
+import Link from 'gatsby-plugin-transition-link/AniLink'
 
 export interface ITourProps {
   tour: {
@@ -45,11 +46,16 @@ export const Tour = ({ tour }: ITourProps) => {
         <p className="content__description">{description}</p>
 
         <h2 className="content__title">Daily Schedule:</h2>
+
         <div className="journey">
           {journey.map((item: any, i: number) => (
             <Day key={i} {...item} />
           ))}
         </div>
+
+        <Link to="/tours" className="btn btn--primary">
+          back to tours
+        </Link>
       </article>
 
       <div className="images">

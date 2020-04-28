@@ -13,7 +13,7 @@ export default class extends React.Component<menuProps> {
       <ul className={`${prefix}__list`}>
         {links.map((item, i) => (
           <li key={i} className={`${prefix}__item`}>
-            <Link fade to={item.path} className={`${prefix}__link`}>
+            <Link to={item.path} className={`${prefix}__link`}>
               {item.text}
             </Link>
           </li>

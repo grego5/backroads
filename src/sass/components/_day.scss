@@ -1,0 +1,45 @@
+.day {
+  margin: 1rem 0;
+
+  &__title {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $color-light;
+
+    cursor: pointer;
+  }
+
+  &__btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    transition: transform 0.2s linear;
+    cursor: pointer;
+
+    &--open {
+      transform: rotate(90deg);
+    }
+
+    & svg {
+      font-size: 1.5rem;
+      color: $color-primary;
+    }
+
+    @include respond(tab-port) {
+      width: 400px;
+    }
+  }
+
+  &__info {
+    line-height: 2;
+    transition: max-height 0.2s linear;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1rem;
+    &--open {
+      max-height: 20rem;
+    }
+  }
+}

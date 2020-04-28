@@ -40,7 +40,7 @@ const Tour = ({ name, country, price, days, images, slug }: ITourCard) => {
     <div className="tour">
       <div className="tour__image-box">
         <Img className="tour__image" fluid={image} alt="tour image" />
-        <Link fade className="tour__link" to={slug ? `/tours/${slug}` : '#'}>
+        <Link className="tour__link" to={slug ? `/tours/${slug}` : '#'}>
           details
         </Link>
       </div>
