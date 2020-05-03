@@ -28,7 +28,7 @@ export default class TourList extends Component<IProps> {
     const { tours } = this.state
     return (
       <section className={'tours'}>
-        <Heading text={heading} as={as} />
+        <Heading text="our tours" as="h1" />
         <div className="tours__grid">
           {tours.map(({ node }: ITourCard) => {
             return <Tour key={node.id} {...node} />
