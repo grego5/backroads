@@ -9,7 +9,7 @@ import Banner from '../components/Banner'
 import About from '../sections/About'
 import Hero from '../components/Hero'
 import Services from '../sections/Services'
-import TourList from '../sections/TourList'
+import CardList from '../sections/CardList'
 
 export const query = graphql`
   {
@@ -53,7 +53,7 @@ const IndexPage = ({ data }: any) => (
     </Hero>
     <About />
     <Services />
-    <TourList tours={data.tours} heading="featured tours" as="h2" />
+    <CardList data={data.tours} type="tours" heading="featured tours" as="h2" />
   </Layout>
 )
 

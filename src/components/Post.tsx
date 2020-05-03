@@ -3,7 +3,7 @@ import Img, { FluidObject } from 'gatsby-image'
 import Link from 'gatsby-plugin-transition-link/AniLink'
 import PropTypes from 'prop-types'
 
-export interface IBlogPost {
+export interface IPost {
   node: any
   id: string
   title: string
@@ -14,25 +14,25 @@ export interface IBlogPost {
   }
 }
 
-const Tour = ({ title, image, slug }: IBlogPost) => {
+const Tour = ({ title, image, slug, published }: IPost) => {
   return (
-    <div className="post">
-      <div className="post__image-box">
-        <Img className="post__image" fluid={image.fluid} alt="post image" />
-        <Link className="post__link" to={slug ? `/blog/${slug}` : '#'}>
+    <article className="card">
+      <div className="card__image-box">
+        <Img className="card__image" fluid={image.fluid} alt="post image" />
+        <Link className="card__link" to={slug ? `/blog/${slug}` : '#'}>
           details
         </Link>
+        <div className="card__date">{published}</div>
       </div>
-      <div className="post__content">
-        <h3 className="post__title">{title || 'unset'}</h3>
+      <div className="card__content">
+        <h3 className="card__title">{title || 'unset'}</h3>
       </div>
-    </div>
+    </article>
   )
 }
 
 Tour.propTypes = {
-  // post: PropTypes.shape({
-  // })
+  // post: PropTypes.shape({})
   title: PropTypes.string.isRequired,
   published: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,

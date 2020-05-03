@@ -1,4 +1,4 @@
-.tour {
+.card {
   box-shadow: $shadow-light;
   transition: $transition;
 
@@ -12,11 +12,11 @@
     background: $color-primary;
     transition: $transition;
 
-    &:hover .tour__image {
+    &:hover .card__image {
       opacity: 0.3;
     }
 
-    &:hover .tour__link {
+    &:hover .card__link {
       opacity: 1;
     }
   }
@@ -41,6 +41,20 @@
       background: $color-white;
       color: $color-primary;
     }
+  }
+
+  &__date {
+    position: absolute;
+    left: 0;
+    bottom: 10%;
+    background: $color-primary;
+    letter-spacing: $spacing;
+    border-radius: 0 1rem 1rem 0;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    transition: $transition;
   }
 
   &__title {

@@ -7,7 +7,7 @@ interface headingProps {
 
 class Heading extends React.Component<headingProps> {
   render() {
-    const { as = `div`, text } = this.props
+    const { as = 'div', text = 'untitled title' } = this.props
     const ex = text.split(' ')
     const inner = (
       <>

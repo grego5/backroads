@@ -24,7 +24,7 @@ exports.createPages = async ({ graphql, actions }) => {
   data.tours.edges.forEach(({ node }) => {
     createPage({
       path: `tours/${node.slug}`,
-      component: path.resolve('./src/templates/singleTour.tsx'),
+      component: path.resolve('./src/templates/tour.tsx'),
       context: {
         slug: node.slug,
       },
@@ -34,7 +34,7 @@ exports.createPages = async ({ graphql, actions }) => {
   data.posts.edges.forEach(({ node }) => {
     createPage({
       path: `blog/${node.slug}`,
-      component: path.resolve('./src/templates/singlePost.tsx'),
+      component: path.resolve('./src/templates/post.tsx'),
       context: {
         slug: node.slug,
       },

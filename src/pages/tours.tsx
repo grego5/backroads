@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import Banner from '../components/Banner'
-import TourList from '../sections/TourList'
+import TourList from '../sections/CardList'
 import { graphql } from 'gatsby'
 
 export const query = graphql`
@@ -38,7 +38,7 @@ export default ({ data }: any) => {
   return (
     <Layout>
       <Hero small image={data.bg.childImageSharp.fluid} />
-      <TourList tours={data.tours} />
+      <TourList data={data.tours} type="tours" heading="our tours" as="h1" />
     </Layout>
   )
 }
