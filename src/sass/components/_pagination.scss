@@ -1,0 +1,7 @@
+.pagination {
+  margin-top: 2rem;
+
+  & .btn:not(:last-child) {
+    margin-right: 1rem;
+  }
+}

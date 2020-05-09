@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
-import Link from 'gatsby-plugin-transition-link/AniLink'
+import Pagination from '../components/Pagination'
 import Blog, { IBlog } from '../components/Blog'
 import Heading from '../components/Heading'
 
@@ -12,26 +12,14 @@ const bloglist = ({ data, pageContext: { currentPage, numPages } }: any) => {
       <Hero small image={data.file.childImageSharp.fluid} />
       <section className="cardlist">
         <Heading text="our blog" as="h1" />
+
         <div className="cardlist__grid">
           {data.posts.edges.map(({ node }: IBlog) => (
             <Blog key={node.id} node={node} />
           ))}
         </div>
-        <div className="cardlist__pagination">
-          {Array.from({ length: numPages }, (_, i) => {
-            return (
-              <Link
-                key={i}
-                to={`/blogs/${i === 0 ? '' : i + 1}`}
-                className={`btn ${
-                  currentPage === i + 1 ? 'btn--active' : 'btn--primary'
-                }`}
-              >
-                {i + 1}
-              </Link>
-            )
-          })}
-        </div>
+
+        <Pagination currentPage={currentPage} numPages={numPages} />
       </section>
     </Layout>
   )
