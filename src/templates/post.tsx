@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
-import Banner from '../components/Banner'
 import Post, { IPostProps } from '../sections/Post'
 
 interface IProps {
@@ -28,7 +27,7 @@ export const query = graphql`
       title
       slug
       text {
-        text
+        json
       }
       published(formatString: "DD/MM/YY")
       image {

@@ -1,20 +1,20 @@
 import React from 'react'
 import Img, { FluidObject } from 'gatsby-image'
 import Link from 'gatsby-plugin-transition-link/AniLink'
-import PropTypes from 'prop-types'
 
 export interface IPost {
-  node: any
-  id: string
-  title: string
-  published: string
-  slug: string
-  image: {
-    fluid: FluidObject
+  node: {
+    id: string
+    title: string
+    published: string
+    slug: string
+    image: {
+      fluid: FluidObject
+    }
   }
 }
 
-const Tour = ({ title, image, slug, published }: IPost) => {
+const Post = ({ node: { title, image, slug, published } }: IPost) => {
   return (
     <article className="card">
       <div className="card__image-box">
@@ -31,13 +31,4 @@ const Tour = ({ title, image, slug, published }: IPost) => {
   )
 }
 
-Tour.propTypes = {
-  // post: PropTypes.shape({})
-  title: PropTypes.string.isRequired,
-  published: PropTypes.string.isRequired,
-  country: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
-  images: PropTypes.object.isRequired,
-}
-
-export default Tour
+export default Post
