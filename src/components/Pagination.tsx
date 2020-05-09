@@ -12,9 +12,7 @@ const Pagination = ({ currentPage, numPages }: IProps) => {
   return (
     <div className="pagination">
       <Link
-        to={`/blogs/${
-          currentPage === 1 || currentPage === 2 ? '' : currentPage - 1
-        }`}
+        to={`/blogs/${currentPage <= 2 ? '' : currentPage - 1}`}
         className={`btn btn--${currentPage === 1 ? 'active' : 'primary'}`}
       >
         Prev
