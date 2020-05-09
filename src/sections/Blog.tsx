@@ -4,8 +4,8 @@ import Link from 'gatsby-plugin-transition-link/AniLink'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Document } from '@contentful/rich-text-types/'
 
-export interface IPostProps {
-  post: {
+export interface IBlog {
+  blog: {
     id: string
     title: string
     published: string
@@ -19,12 +19,12 @@ export interface IPostProps {
   }
 }
 
-export const Post = ({ post }: IPostProps) => {
+export const Blog = ({ blog }: IBlog) => {
   const {
     title,
     published,
     text: { json },
-  } = post
+  } = blog
   const options = {
     renderNode: {
       'embedded-asset-block': (node: any) => {
@@ -35,7 +35,7 @@ export const Post = ({ post }: IPostProps) => {
   }
 
   return (
-    <div className="tour-layout">
+    <div className="post-layout">
       <article className="content">
         <h2 className="content__title">{title}</h2>
         <div className="content__title">{published}</div>
@@ -51,4 +51,4 @@ export const Post = ({ post }: IPostProps) => {
   )
 }
 
-export default Post
+export default Blog

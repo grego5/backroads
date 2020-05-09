@@ -29,7 +29,7 @@ export const Tour = ({ tour }: ITourProps) => {
   } = tour
 
   return (
-    <div className="tour-layout">
+    <div className="post-layout">
       <article className="content">
         <div className="content__info">
           <h2 className="content__title">Info:</h2>

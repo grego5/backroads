@@ -2,7 +2,7 @@ import React from 'react'
 import Img, { FluidObject } from 'gatsby-image'
 import Link from 'gatsby-plugin-transition-link/AniLink'
 
-export interface IPost {
+export interface IBlog {
   node: {
     id: string
     title: string
@@ -14,7 +14,7 @@ export interface IPost {
   }
 }
 
-const Post = ({ node: { title, image, slug, published } }: IPost) => {
+const Post = ({ node: { title, image, slug, published } }: IBlog) => {
   return (
     <article className="card">
       <div className="card__image-box">

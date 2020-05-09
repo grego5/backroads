@@ -3,26 +3,26 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
-import Post, { IPostProps } from '../sections/Post'
+import Blog, { IBlog } from '../sections/Blog'
 
 interface IProps {
-  data: IPostProps
+  data: IBlog
 }
 
-const singlePost = ({ data: { post } }: IProps) => {
+const blog = ({ data: { blog } }: IProps) => {
   return (
     <Layout>
-      <Hero small image={post.image.fluid} />
-      <Post post={post} />
+      <Hero small image={blog.image.fluid} />
+      <Blog blog={blog} />
     </Layout>
   )
 }
 
-export default singlePost
+export default blog
 
 export const query = graphql`
   query($slug: String!) {
-    post: contentfulPost(slug: { eq: $slug }) {
+    blog: contentfulPost(slug: { eq: $slug }) {
       id: contentful_id
       title
       slug

@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
-import PostList from '../sections/PostList'
+import BlogList from '../sections/BlogList'
 
 import { graphql } from 'gatsby'
 
@@ -36,7 +36,7 @@ const blog = ({ data }: any) => {
   return (
     <Layout>
       <Hero small image={data.file.childImageSharp.fluid} />
-      <PostList data={data.posts} />
+      <BlogList data={data.posts} />
     </Layout>
   )
 }
