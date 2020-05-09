@@ -24,7 +24,7 @@ export default class BlogList extends Component<IProps> {
   render() {
     const { posts } = this.state
     return (
-      <section className={'cardlist'}>
+      <section className="cardlist">
         <Heading text="our blog" as="h1" />
         <div className="cardlist__grid">
           {posts.map(({ node }: IBlog) => (

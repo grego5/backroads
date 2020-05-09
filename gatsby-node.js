@@ -12,7 +12,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
 
-      blogs: allContentfulPost {
+      posts: allContentfulPost {
         edges {
           node {
             slug
@@ -32,12 +32,28 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  data.blogs.edges.forEach(({ node }) => {
+  data.posts.edges.forEach(({ node }) => {
     createPage({
       path: `blog/${node.slug}`,
       component: path.resolve('./src/templates/blog.tsx'),
       context: {
         slug: node.slug,
+      },
+    })
+  })
+
+  const posts = data.posts.edges
+  const postsPerPage = 6
+  const numPages = Math.ceil(posts.length / postsPerPage)
+
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blogs` : `/blogs/${i + 1}`,
+      component: path.resolve('./src/templates/bloglist.tsx'),
+      context: {
+        skip: i * postsPerPage,
+        limit: postsPerPage,
+        currentPage: i + 1,
       },
     })
   })

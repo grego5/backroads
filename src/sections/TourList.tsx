@@ -27,7 +27,7 @@ export default class TourList extends Component<IProps> {
     const { tours } = this.state
     const { heading, as } = this.props
     return (
-      <section className={'cardlist'}>
+      <section className="cardlist">
         <Heading text={heading} as={as} />
         <div className="cardlist__grid">
           {tours.map(({ node }: ITour) => (
