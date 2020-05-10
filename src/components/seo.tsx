@@ -70,7 +70,7 @@ function SEO({ description, lang, meta, keywords, title }: ISEO) {
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,
