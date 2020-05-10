@@ -61,12 +61,28 @@ function SEO({ description, lang, meta, keywords, title }: ISEO) {
           content: title,
         },
         {
+          property: `og:url`,
+          content: siteUrl,
+        },
+        {
           property: `og:description`,
           content: metaDescription,
         },
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: siteUrl + image,
+        },
+        {
+          property: `og:image:width`,
+          content: `400`,
+        },
+        {
+          property: `og:image:height`,
+          content: `300`,
         },
         {
           name: `twitter:card`,
