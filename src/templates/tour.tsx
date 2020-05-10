@@ -14,7 +14,7 @@ const singleTour = ({ data: { tour } }: IProps) => {
   const { name, start, images } = tour
 
   return (
-    <Layout>
+    <Layout title={name}>
       <Hero image={images[0].fluid}>
         <Banner title={name} text={start} />
       </Hero>

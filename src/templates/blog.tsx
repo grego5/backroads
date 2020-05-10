@@ -11,7 +11,7 @@ interface IProps {
 
 const blog = ({ data: { blog } }: IProps) => {
   return (
-    <Layout>
+    <Layout title={blog.title}>
       <Hero small image={blog.image.fluid} />
       <Blog blog={blog} />
     </Layout>

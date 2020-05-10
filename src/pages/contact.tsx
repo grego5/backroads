@@ -18,7 +18,7 @@ export const query = graphql`
 `
 
 const contact = ({ data }: any) => (
-  <Layout>
+  <Layout title="Contact">
     <Hero small image={data.file.childImageSharp.fluid} />
     <Contact />
   </Layout>

@@ -8,7 +8,7 @@ import Heading from '../components/Heading'
 
 const bloglist = ({ data, pageContext: { currentPage, numPages } }: any) => {
   return (
-    <Layout>
+    <Layout title="Blogs">
       <Hero small image={data.file.childImageSharp.fluid} />
       <section className="cardlist">
         <Heading text="our blog" as="h1" />

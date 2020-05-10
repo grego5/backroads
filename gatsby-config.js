@@ -7,6 +7,9 @@ module.exports = {
     title: `Backroads`,
     description: `Another udemy course project`,
     author: `grego5`,
+    twitterUsername: '@grgrsm',
+    image: '/defaultBcg.jpeg',
+    siteUrl: 'https://backroads.gregos.net',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

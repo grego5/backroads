@@ -34,7 +34,7 @@ export const query = graphql`
 `
 const blog = ({ data }: any) => {
   return (
-    <Layout>
+    <Layout title="Blog">
       <Hero small image={data.file.childImageSharp.fluid} />
       <BlogList data={data.posts} />
     </Layout>

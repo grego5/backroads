@@ -7,35 +7,25 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
 import Header from '../sections/Header'
 import Footer from '../sections/Footer'
+import SEO from '../components/seo'
 
-const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
+const Layout = (props: any) => {
+  return (
+    <>
+      <SEO title={props.title} keywords={[`gatsby`, `application`, `react`]} />
 
-const Layout = ({ children }: JSX.ElementChildrenAttribute) => (
-  <StaticQuery
-    query={query}
-    render={data => (
-      <>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </>
-    )}
-  />
-)
+      <Header />
+      <main>{props.children}</main>
+      <Footer />
+    </>
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
 }
 
 export default Layout

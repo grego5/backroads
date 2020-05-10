@@ -1,6 +1,5 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import SEO from '../components/seo'
 import { graphql } from 'gatsby'
 import Link from 'gatsby-plugin-transition-link/AniLink'
 
@@ -42,8 +41,7 @@ export const query = graphql`
 `
 
 const IndexPage = ({ data }: any) => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+  <Layout title="Home">
     <Hero image={data.file.childImageSharp.fluid}>
       <Banner title="It's the home page" text="Welcome to it">
         <Link fade className="btn btn--white" to="/tours">

@@ -35,7 +35,7 @@ export const query = graphql`
 
 export default ({ data }: any) => {
   return (
-    <Layout>
+    <Layout title="Tours">
       <Hero small image={data.bg.childImageSharp.fluid} />
       <TourList data={data.tours} heading="our tours" as="h1" />
     </Layout>
