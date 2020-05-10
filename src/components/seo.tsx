@@ -23,9 +23,12 @@ function SEO({ description, lang, meta, keywords, title }: ISEO) {
       query {
         site {
           siteMetadata {
-            title
+            siteTitle: title
             description
             author
+            siteUrl
+            image
+            twitterUsername
           }
         }
       }
@@ -33,6 +36,13 @@ function SEO({ description, lang, meta, keywords, title }: ISEO) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const {
+    author,
+    siteUrl,
+    image,
+    twitterUsername,
+    siteTitle,
+  } = site.siteMetadata
 
   return (
     <Helmet
@@ -64,15 +74,23 @@ function SEO({ description, lang, meta, keywords, title }: ISEO) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: twitterUsername,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: siteTitle,
         },
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: siteUrl + image,
+        },
+        {
+          name: `image`,
+          content: image,
         },
       ]
         .concat(
