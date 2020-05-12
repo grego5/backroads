@@ -8,7 +8,7 @@ import Heading from '../components/Heading'
 
 const bloglist = ({ data, pageContext: { currentPage, numPages } }: any) => {
   return (
-    <Layout title="Blogs">
+    <Layout title="Blog">
       <Hero small image={data.file.childImageSharp.fluid} />
       <section className="cardlist">
         <Heading text="our blog" as="h1" />
@@ -19,7 +19,7 @@ const bloglist = ({ data, pageContext: { currentPage, numPages } }: any) => {
           ))}
         </div>
 
-        <Pagination currentPage={currentPage} numPages={numPages} />
+        <Pagination currentPage={currentPage} numPages={numPages} path="blog" />
       </section>
     </Layout>
   )

@@ -50,7 +50,7 @@ function SEO({ description, lang, meta, keywords, title }: ISEO) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${site.siteMetadata.siteTitle}`}
       meta={[
         {
           name: `description`,

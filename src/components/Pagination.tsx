@@ -4,15 +4,16 @@ import Link from 'gatsby-plugin-transition-link/AniLink'
 interface IProps {
   currentPage: number
   numPages: number
+  path: string
 }
 
-const Pagination = ({ currentPage, numPages }: IProps) => {
+const Pagination = ({ currentPage, numPages, path }: IProps) => {
   console.log(numPages)
   console.log(currentPage)
   return (
     <div className="pagination">
       <Link
-        to={`/blogs/${currentPage <= 2 ? '' : currentPage - 1}`}
+        to={`/${path}/${currentPage <= 2 ? '' : currentPage - 1}`}
         className={`btn btn--${currentPage === 1 ? 'active' : 'primary'}`}
       >
         Prev
@@ -22,7 +23,7 @@ const Pagination = ({ currentPage, numPages }: IProps) => {
         return (
           <Link
             key={i}
-            to={`/blogs/${i === 0 ? '' : i + 1}`}
+            to={`/${path}/${i === 0 ? '' : i + 1}`}
             className={`btn btn--${
               currentPage === i + 1 ? 'active' : 'primary'
             }`}
@@ -33,7 +34,7 @@ const Pagination = ({ currentPage, numPages }: IProps) => {
       })}
 
       <Link
-        to={`/blogs/${
+        to={`/${path}/${
           currentPage === numPages ? currentPage : currentPage + 1
         }`}
         className={`btn btn--${
